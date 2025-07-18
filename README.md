@@ -28,7 +28,7 @@ It provides both Python and TypeScript implementations, returning structured out
 
 ```mermaid
 flowchart TD
-    A[User provides product URL or prompt (+ optional image)] --> B(OpenAI Response API: tool calling)
+    A["User provides product URL or prompt (+ optional image)"] --> B(OpenAI Response API: tool calling)
     B --> C{Tool: extract_image_url or generate_image}
     C --> D[Fetch product page HTML or send prompt/image to API]
     D --> E{Extraction or Generation strategies}
