@@ -28,18 +28,18 @@ It provides both Python and TypeScript implementations, returning structured out
 
 ```mermaid
 flowchart TD
-    A[User provides product URL or prompt (+ optional image)] --> B(OpenAI Response API: tool calling)
-    B --> C{Tool: extract_image_url or generate_image}
-    C --> D[Fetch product page HTML or send prompt/image to API]
-    D --> E{Extraction or Generation strategies}
-    E -->|og:image| F[Extract from Open Graph meta tag]
-    E -->|product__media| G[Extract from product__media class]
-    E -->|first_img| H[Extract first <img> tag]
-    E -->|prompt| L[Generate from prompt]
-    E -->|image+prompt| M[Generate from image and prompt]
+    A["User provides product URL<br/>or prompt (+ optional<br/>image)"] --> B(OpenAI Responses API:<br/>tool calling)
+    B --> C{Tool: extract_image_url<br/>or generate_image}
+    C --> D[Fetch product page HTML<br/>or send prompt/image<br/>to API]
+    D --> E{Extraction or<br/>Generation strategies}
+    E -->|og:image| F[Extract from Open Graph<br/>meta tag]
+    E -->|product__media| G[Extract from<br/>product__media class]
+    E -->|first_img| H["Extract first<br>&lt;img&gt; tag"]
+    E -->|prompt| L[Generate from<br/>prompt]
+    E -->|image+prompt| M[Generate from image<br/>and prompt]
     F & G & H & L & M --> I[Return structured output]
-    I --> J[OpenAI returns structured JSON]
-    J --> K[User receives image_url, source_url, found_method]
+    I --> J[OpenAI returns<br>structured JSON]
+    J --> K[User receives image_url,<br>source_url, found_method]
 ```
 
 ## Example Output
